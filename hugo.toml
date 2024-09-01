@@ -39,9 +39,9 @@ disableHugoGeneratorInject = false
 [blackfriday]
   hrefTargetBlank = true
 
-# [taxonomies]
-#   tag      = "tags"
-#   category = "categories"
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
 
 [params]
 
