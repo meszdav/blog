@@ -1,4 +1,4 @@
-baseURL = "davidmeszaros.blog"
+baseURL = "www.davidmeszaros.blog"
 title   = "David`s Blog"
 languageCode = "en-us"
 theme = "hello-friend-ng"
