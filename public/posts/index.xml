@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on David`s Blog</title>
-        <link>http://localhost:1313/posts/</link>
+        <link>//localhost:1313/posts/</link>
         <description>Recent content in Posts on David`s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
         <lastBuildDate>Sun, 01 Sep 2024 00:00:00 +0000</lastBuildDate>
-        <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>first-post</title>
-            <link>http://localhost:1313/posts/2024/09/first-post/</link>
+            <title>test</title>
+            <link>//localhost:1313/posts/2024/09/test/</link>
             <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
             
-            <guid>http://localhost:1313/posts/2024/09/first-post/</guid>
+            <guid>//localhost:1313/posts/2024/09/test/</guid>
             <description>Test python code $$ \frac{a}{b} $$ def test(x): return x </description>
             <content type="html"><![CDATA[<h1 id="test-python-code">Test python code</h1>
 $$ \frac{a}{b} $$<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
@@ -24,17 +24,266 @@ $$ \frac{a}{b} $$<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;b
         </item>
         
         <item>
-            <title>test</title>
-            <link>http://localhost:1313/posts/2024/09/test/</link>
-            <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+            <title>Road Surface Quality</title>
+            <link>//localhost:1313/posts/2020/09/road-surface-quality/</link>
+            <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
             
-            <guid>http://localhost:1313/posts/2024/09/test/</guid>
-            <description>Test python code $$ \frac{a}{b} $$ def test(x): return x </description>
-            <content type="html"><![CDATA[<h1 id="test-python-code">Test python code</h1>
-$$ \frac{a}{b} $$<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>(x):
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> x
-</span></span></code></pre></div>]]></content>
+            <guid>//localhost:1313/posts/2020/09/road-surface-quality/</guid>
+            <description>Road Surface Quality using Smartphone - Project Report Status: Completed
+Introduction I live in Hungary, where the road surface quality is one of the worst in Europe. While I was on the road, I thought several times that it would be good to plan my trip depending on the road quality. In this case I could better enjoy the beauties of my country, and the trips would been more safe. Because of this, I decided to create a proof of concept in this topic.</description>
+            <content type="html"><![CDATA[<h1 id="road-surface-quality-using-smartphone---project-report">Road Surface Quality using Smartphone - Project Report</h1>
+<p>Status: Completed</p>
+<h1 id="introduction">Introduction</h1>
+<p>I live in Hungary, where the road surface quality is one of the worst in Europe. While I was on the road, I thought several times that it would be good to plan my trip depending on the road quality. In this case I could better enjoy the beauties of my country, and the trips would been more safe. Because of this, I decided to create a proof of concept in this topic.</p>
+<p>The goal of the proof of concept is to evaluate specific road surface measurements, and plot the road surface quality to a geographical map, only using the measurement data.</p>
+<p>The measurements have been recorded via a smart phone, and  only the accelerometer, gyroscope and gps data have been used, to classify the road surface into a quality class.</p>
+<h2 id="steps">Steps</h2>
+<ol>
+<li>Data Acquisition</li>
+<li>Data Exploration and Data Processing</li>
+<li>Feature Engineering</li>
+<li>Data Classification and Model Evaluation</li>
+<li>Hyperparameter Tuning</li>
+<li>Deployment</li>
+<li>Conclusion</li>
+</ol>
+<h2 id="data-acquisition">Data Acquisition</h2>
+<p>I decided to make this project with my own data. This means the first challenge was to acquire usable data, which I can use to train machine learning models.</p>
+<p>The first thing was to plan a measurement process, which I can use as a standard for recording the data.  As hardware I chose my IPhone, because this is a straight forward way to record sensory data. The smartphone is not the only hardware in order to collect data from the roads. The other hardware to collect this type of data is a vehicle. I used my car to make the measurements.</p>
+<p>My plan was to select 3 types of roads, which I can use as training data. After thinking about a bit, I realized that to classify road surface quality into three classes I would need much more data and experimenting.  So I discarded the idea, and I decided to classify the road surfaces into two categories; good and bad.</p>
+<p>This is a very subjective way to select labeled data, but as a proof of concept it worked perfectly.</p>
+<p>For <strong>quality 1</strong> I selected the following route in Hungary where I live:</p>
+<p><img alt="Figure 1: Best quality road surface" src="/posts/2020/09/road-surface-quality/quality_0.png"></p>
+<p>Figure 1: Best quality road surface</p>
+<p>For the <strong>quality 2</strong> road surface I selected roads with significant dameges.</p>
+<p><img alt="Figure 3: Bad quality road surface." src="/posts/2020/09/road-surface-quality/newplot_(7).png"></p>
+<p>Figure 3: Bad quality road surface.</p>
+<p>These routes will be the dataset in order to train, validate and test the machine learning models.</p>
+<p>For testing purposes I selected another route, which I can use to test the best model with data which is fully unknown for the model. This route will have good and bad road surfaces as well.</p>
+<p><img alt="Figure 4: Test route for road surface classification" src="/posts/2020/09/road-surface-quality/newplot_(8).png"></p>
+<p>Figure 4: Test route for road surface classification</p>
+<p>As record instrument I used the phyphox application. This application is able to record all of the signals from the smart phone. This is perfect for my purposes. The sample rate for the accelerometer and the gyroscope is 50Hz, which is very good for this use case. But the sample rate for the GPS is only 1s. (and the sample rate not constant). The output of the measurements are comma separated csv file. In the output file there are 4 csv-s, and each csv belongs to a sensor.</p>
+<h1 id="data-exploration-and-processing">Data Exploration and Processing</h1>
+<p>First of all I wanted to see the data from the accelerometers and gyroscope. These signals are going to help to classify the road surfaces. To do so I separately read in the data, and then I plotted the signals vs the time.</p>
+<p><img alt="Figure 5: Time signals form the accelerometers and gyroscope" src="check_sensors.png"></p>
+<p>Figure 5: Time signals form the accelerometers and gyroscope</p>
+<p>The sensory data seems to be right. There are no bigger gaps in the signal nor unrealistic behaviour of the time signal. (e.g.: 0 values or stationary parts)</p>
+<p>After the check of the time signals, the next task was to read in all the data in a proper way. The phyphox application creates 4 csv files for each signal. Which is great if we would like to work with the signals separately. But in this case we need to handle all signals together. I wrote a function to merge all signals to a file. After the merge  I had the following column names:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>time - time points of the measurements [s]
+</span></span><span style="display:flex;"><span>lat - Latitude [°]
+</span></span><span style="display:flex;"><span>lon - Longitude [°]
+</span></span><span style="display:flex;"><span>height - Height above sea level [m]
+</span></span><span style="display:flex;"><span>velocity - Velovity [m/s]
+</span></span><span style="display:flex;"><span>direction - Direction [°]
+</span></span><span style="display:flex;"><span>h_accuracy - Accuracy of the horizontal coordinate
+</span></span><span style="display:flex;"><span>v_accuracy - Accuracy of the vertical ccordinate
+</span></span><span style="display:flex;"><span>x_lin_acc - Linear acceleration of the x axis
+</span></span><span style="display:flex;"><span>y_lin_acc - Linear acceleration of the y axis
+</span></span><span style="display:flex;"><span>z_lin_acc - Linear acceleration of the z axis
+</span></span><span style="display:flex;"><span>x_gyro - Gyroscope x axis
+</span></span><span style="display:flex;"><span>y_gyro - Gyroscope y axis
+</span></span><span style="display:flex;"><span>z_gyro - Gyroscope z axis
+</span></span><span style="display:flex;"><span>x_acc - Accelrometer x axis
+</span></span><span style="display:flex;"><span>y_acc - Accelrometer x axis
+</span></span><span style="display:flex;"><span>z_acc - Accelrometer x axis
+</span></span><span style="display:flex;"><span>measurementID - Id of the measurement
+</span></span></code></pre></div><p>Here I have all neccessery columns to start to work with. However the signals have been recorded at the same time, the time points in the 4 separate files are different. This means, that after the merge of the measurements, there are data points where we have only information about one sensor. To check how different they are I made some data exploration on the dataframe.</p>
+<p>I checked the ratio of the <em>NaN</em>  values in all signals:</p>
+<pre tabindex="0"><code>time             0.000000
+lat              0.995014
+lon              0.995014
+height           0.995014
+velocity         0.995014
+direction        0.995014
+h_accuracy       0.995014
+v_accuracy       0.995014
+x_lin_acc        0.502548
+y_lin_acc        0.502548
+z_lin_acc        0.502548
+x_gyro           0.502548
+y_gyro           0.502548
+z_gyro           0.502548
+x_acc            0.502430
+y_acc            0.502430
+z_acc            0.502430
+measurementID    0.000000
+dtype: float64
+</code></pre><p>It easy to see, that the na values in each column is really high. The smallest amount of <em>NaN</em> values have the accelerometers and the gyroscope, but the gps signals have a large amount of <em>NaN</em>  values. To see visually where are those missing values I plotted out a heatmap. (<strong>blues</strong> for values and the <strong>whites</strong> for the <em>NaNs</em>):</p>
+<p><img alt="Figure 6: Distribution of the <em>NaN</em> values in the dataframe" src="/posts/2020/09/road-surface-quality/Untitled.png"></p>
+<p>Figure 6: Distribution of the <em>NaN</em> values in the dataframe</p>
+<p>The explanation for this, the sample rate of the measurement. The data points have been not recorded at the same time for the different sensors as I waited. For example there were no data  recorded for the accelerometer where the data have been recorded for the gyroscope and vice versa. This means as well, that the dropping out of the <em>NaN</em>  values is not a solution for this problem. If we would do so, then we lost all data point from one or more  sensors. In order to take care of this missing values I worked out the following data processing steps:</p>
+<ol>
+<li>
+<p>Correcting timestamps</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>Making time groups</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>Interploate timestamps</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
+</ol>
+<p>After these steps the <em>NaN</em> values have been from the accelerometers and the gyroscope eliminated. With the <em>NaNs</em> in the gps signals I will take care of in a later step.</p>
+<p><img alt="Figure 7: Distribution of the <em>NaNs</em> after the dataprocessing steps." src="/posts/2020/09/road-surface-quality/Untitled%201.png"></p>
+<p>Figure 7: Distribution of the <em>NaNs</em> after the dataprocessing steps.</p>
+<p>These steps make possible to do feature engineering, which is the key part of the data processing.</p>
+<h1 id="feature-engineering">Feature Engineering</h1>
+<p>The datasets in the previously  described form is not appropriate for the corresponding machine learning model training. If we use the data in this form, we would do classification for each data point.  But what does one data point mean? One data point has the information about the road surface only in one moment which not describes the property of a part. In order to have a better description of a specific part of the road, we need to examine bigger part of the measurement. This means we need to aggregate the data according to some parameter.</p>
+<p>I selected as my aggregation paremter the gps coordinates. I have one gps record in every seconds, this means I will examine a statistic from all data point in every seconds. And this statistics will be my features for the machine learning algorithm.</p>
+<p>I aggregated the time series data for every seconds with the following functions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>sum - sum of the values
+</span></span><span style="display:flex;"><span>mean - sum of the values
+</span></span><span style="display:flex;"><span>mad - mean absolute deviation of the values
+</span></span><span style="display:flex;"><span>median - meadian of the values
+</span></span><span style="display:flex;"><span>min - minimum of the values
+</span></span><span style="display:flex;"><span>max - maximum of the values
+</span></span><span style="display:flex;"><span>std - sample standard deviation
+</span></span><span style="display:flex;"><span>var - unbiased variance
+</span></span><span style="display:flex;"><span>sem - unbiased standard error of the mean
+</span></span><span style="display:flex;"><span>skew - unbiased skew
+</span></span><span style="display:flex;"><span>quantile - values at the given quantile
+</span></span><span style="display:flex;"><span>kurtosis_time - kurtosis of the values
+</span></span><span style="display:flex;"><span>rms_100 - root mean squer of the values
+</span></span><span style="display:flex;"><span>crest - crest factor of the values
+</span></span></code></pre></div><p>To do so I wrote a function which take care of all data aggregation along the gps coordinates.</p>
+<p>After the data aggregation, the resulted dataframe have 14[aggregation function] x 9[sensors] (126) new features to work with.</p>
+<p>Now the data is prepared for the machine learning steps. But before the classification part let see how the data looks like.</p>
+<p>Number of <em>NaNs: 0</em></p>
+<p>Number of features: 126</p>
+<p>Labels distribution:</p>
+<p>There are 561 records for the  label 0 and 540 for the label 1. This means all class is representative in the dataset.</p>
+<p><img alt="Figure 8: Label Distribution" src="/posts/2020/09/road-surface-quality/newplot_(10).png"></p>
+<p>Figure 8: Label Distribution</p>
+<p>To prepare the data for machine learning I splitted the data into train, validation and test set. In the first step I splitted the 70% of the data to train set and the 20% of the data to validation set. After that I used the  splitted train set for further splitting. At the and I had following three splits:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>train:  704 records
+</span></span><span style="display:flex;"><span>val:  221 records
+</span></span><span style="display:flex;"><span>test:  176 records
+</span></span></code></pre></div><p>With these steps I could evaluate my model with data which have been not seen by the model.</p>
+<h1 id="data-classification-and-model-evaluation">Data Classification and Model Evaluation</h1>
+<h2 id="model">Model</h2>
+<p>The described task is a classification problem. To classify the data we can use supervised learning algorithms. I used the scikit learn library as my tool. In the library there are several classification algorithms which can do the job. I wanted to find the best technique for my purposes, that is why I tested 6 algorithms. I chose the following algorithms:</p>
+<ul>
+<li>Random Frorest Classifier (rfc)</li>
+<li>Support Vector Classification (svc)</li>
+<li>K-Neighbors Classifier (knc)</li>
+<li>AdaBoost Classifier (abc)</li>
+<li>Gradient Boosting Classifier (gbc)</li>
+<li>Gaussian Naive Bayes (gnb)</li>
+</ul>
+<p>My expectation was that the svc or the rfc performs the best. There are some papers, where the Support Vector Classification have been used to classify road surface data [1,2]</p>
+<p>1.: <a href="https://ieeexplore.ieee.org/document/6485514">https://ieeexplore.ieee.org/document/6485514</a></p>
+<p>2.: <a href="https://www.semanticscholar.org/paper/An-SVM-based-Algorithm-for-Road-Disease-Detection-Ren-Wen/279180bff3ef77d8cb23f0fb56075f61bc291013">https://www.semanticscholar.org/paper/An-SVM-based-Algorithm-for-Road-Disease-Detection-Ren-Wen/279180bff3ef77d8cb23f0fb56075f61bc291013</a></p>
+<h2 id="metrics">Metrics</h2>
+<p>As my main metric to evaluate the model I chose the accuracy score. The accuracy score can be calculated as the sum of the true positive and true negative values divided by the total number of the samples. This score works only if the data is well balanced, this means that the number of each label should be almost the same. This is perfect for this usecase, because the number of  the label 0, and 1 is almost the same and so the accuracy score  is a representative evaluating metrics.</p>
+<p>I trained all models on the training data. And with the basic parameters I got the following results.</p>
+<p><img alt="Untitled%202.png" src="/posts/2020/09/road-surface-quality/Untitled%202.png"></p>
+<p>The best accuracy belongs to the Random Forest Classifier and to the Gradient Boosting Classifier. In the cross validation the smaller delta (max score - min score) value belongs to the Random Forest Classifier, this means the model is more robust, and performs better with unknown data. The AdaBoost classifier performs pretty good as well, but the robustness and the accuracy score sightly below of the Random Forest and Gradient Boosting classifiers. The performance of KNeighbors classifier is worse than the previous methods. The Support Vector classifier performs the worst, this model classifies all record with label 1, this means the model cannot make difference between the classes.</p>
+<p>If we examine the confusion matrix of these two classifier we can see, that the  RFC and the SVC make the same mistakes.  That is why I decided to make hyperparameter tuning for both algorithms.</p>
+<p><img alt="Figure 8: Confusion matrix of the Random Forest Classifier" src="/posts/2020/09/road-surface-quality/Untitled%203.png"></p>
+<p>Figure 8: Confusion matrix of the Random Forest Classifier</p>
+<p><img alt="Figure 9: Confusion Matrix of the Gradient Boost Classifier" src="/posts/2020/09/road-surface-quality/Untitled%204.png"></p>
+<p>Figure 9: Confusion Matrix of the Gradient Boost Classifier</p>
+<h1 id="hyperparameter-tuning">Hyperparameter Tuning</h1>
+<p>For the hyperparameter tuning of the rfc I selected the following  paramters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>params <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;min_samples_leaf&#34;</span>: [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;min_samples_split&#34;</span>: [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">12</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;n_estimators&#34;</span>: [<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">800</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rfc_search <span style="color:#f92672">=</span> GridSearchCV(
+</span></span><span style="display:flex;"><span>    estimator<span style="color:#f92672">=</span>rfc, 
+</span></span><span style="display:flex;"><span>    param_grid<span style="color:#f92672">=</span>params, 
+</span></span><span style="display:flex;"><span>    scoring<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accuracy&#34;</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rfc_search<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span></code></pre></div><p>And for the gbc:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>params <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;learning_rate&#34;</span>: [<span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;min_samples_leaf&#34;</span>: [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;min_samples_split&#34;</span>: [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;n_estimators&#34;</span>: [<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">400</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gbc_search <span style="color:#f92672">=</span> GridSearchCV(
+</span></span><span style="display:flex;"><span>    estimator<span style="color:#f92672">=</span>gbc, 
+</span></span><span style="display:flex;"><span>    param_grid<span style="color:#f92672">=</span>params,
+</span></span><span style="display:flex;"><span>    scoring<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accuracy&#34;</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gbc_search<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span></code></pre></div><p>After the hyperparameter tuning the summary:</p>
+<p><img alt="Untitled%205.png" src="/posts/2020/09/road-surface-quality/Untitled%205.png"></p>
+<p>After the hyperparameter tuning the accuracy score was not better. Because of the training speed and the better cross validation delta score, I selected the Random Forest Classifier as my final model. The final accuracy of the Random Forest Classifier was 0.977376. The training speed was for the rfc: 1,9s and for the gbc 2,9s.</p>
+<p>To examine the accuracy visually I plotted out the training data sets, which have been classified by the trained algorithm. Normally it is not best way to represent the results, but in this case it can be a good choice because while the training the data set was shuffled. In this case I read the labels separately, this means the model saw the data in this form firstly.</p>
+<p><img alt="Figure 10: Training data for good quality road surface" src="/posts/2020/09/road-surface-quality/newplot_(11).png"></p>
+<p>Figure 10: Training data for good quality road surface</p>
+<p><img alt="Figure 11: Training data for bad quality road surface" src="/posts/2020/09/road-surface-quality/newplot_(12).png"></p>
+<p>Figure 11: Training data for bad quality road surface</p>
+<p><img alt="Figure 12: Unknown data classified by the Random Forest Classifier as Proof of Concept" src="/posts/2020/09/road-surface-quality/newplot_(13).png"></p>
+<p>Figure 12: Unknown data classified by the Random Forest Classifier as Proof of Concept</p>
+<h1 id="deployment">Deployment</h1>
+<p>I build a plotly dash application to interactively visualize the data classification. This application can be easily deployed with the help of Amazon Beanstalk or with Heroku. With the application it is possible to upload only a zip file which is coming from directly the phyphox application. After the upload we need to wait just a few seconds and the classification is happening. Every  recorded gps coordinate will be classified to a road surface quality class.</p>
+<p><img alt="Figure 13: Screenshot from the dash application" src="/posts/2020/09/road-surface-quality/Untitled%206.png"></p>
+<p>Figure 13: Screenshot from the dash application</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>I created this project as a proof of concept. The results exceeded my expectations. However I used only smartphone data the classification accuracy was above 97%. There are manny part of the project where it can be optimized. With the collection of more training data from more type of road surfaces, the method can be more better and more versatile.  There are many oportunities to develop the theory, with more data it could be build a database and the road surface data could be monitored not only in one city, but even in a whole country&hellip;</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Human Activity Recognition</title>
+            <link>//localhost:1313/posts/2020/05/human-activity-recognition/</link>
+            <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020/05/human-activity-recognition/</guid>
+            <description>The 7 day Project - Human Activity Recognition The Story First of all, this project wasn&amp;rsquo;t 7 days. Eventually I planned for 14 hours, because I only had 14 hours in 7 days. This was &amp;ldquo;only&amp;rdquo; a side project next to my work.
+I am writing this description after 14 days. And I guess there were 4 days when I wasn&amp;rsquo;t working on this project. So I did it in 10 days 👌.</description>
+            <content type="html"><![CDATA[<h1 id="the-7-day-project---human-activity-recognition">The 7 day Project - Human Activity Recognition</h1>
+<h2 id="the-story">The Story</h2>
+<p>First of all, this project wasn&rsquo;t 7 days. Eventually I planned for 14 hours, because I only had 14 hours in 7 days. This was &ldquo;only&rdquo; a side project next to my work.</p>
+<p>I am writing this  description after 14 days. And I guess there were 4 days when I wasn&rsquo;t working on this project. So I did it in 10 days 👌.</p>
+<p>What is this project all about? I saw a Youtube video from Daniel Bourke. He did a <a href="https://www.youtube.com/watch?v=C_lIenSJb3c&t=347s">42 day project</a>, and I was inspired by this. I&rsquo;ve just finished my first Udacity course (Intro to Machine Learning)  and I thought, it would be a great practice to do a machine learning project. So I decided, I&rsquo;m going to do something like this 42 day project, but on my own way.</p>
+<p>First, I searched for exciting datasets and I found three really cool ones.</p>
+<ol>
+<li><a href="http://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions">Human Activity Recognition Using Smartphones Data Set</a></li>
+<li><a href="http://archive.ics.uci.edu/ml/datasets/Bar+Crawl%3A+Detecting+Heavy+Drinking">Bar Crawl: Detecting Heavy Drinking Data Set</a></li>
+<li><a href="http://archive.ics.uci.edu/ml/datasets/Daily+Demand+Forecasting+Orders">Daily Demand Forecasting Orders Data Set</a></li>
+</ol>
+<p>In the <strong>first dataset</strong> we should find different activities with the help of accelerometer and gyroscope data from <strong>smartphone</strong>. I thought I could solve this, and I could build a model, which could do this job.  I found it challenging to achive a high accuracy, but I&rsquo;ve already read some of the papers regarding to this project and the accuracy of the models was above 90%, which is great 👍.</p>
+<p><strong>Second dataset</strong> hmm. My personal favourite. Here we should find heavy drinking &rsquo;episodes&rsquo; with accelerometer data from smartphones.  I have taken a look at the paper here as well. The accuracy was ~77,5%. It is high, but not as high as in the previous one. I thought the success rate is not so high as in the previous one. But to find drunk events with the help of a smartphone, it is cool. 🍻</p>
+<p>The <strong>third</strong> one. I &rsquo;ve looked for a third dataset and I found this. Predicting  total of orders for daily treatment. It sounds a bit boring in comparsion with the first and second one, but I was pretty sure, that I can do this within 7 days. 🚚</p>
+<p>I decided, that I&rsquo;ll do the first one. Why? Because it is the most logical one for me 🧐. It has a lot of resources. I&rsquo;ve already worked with sensor data and I saw in other papers that this is doable.
+Since this will be my first bigger project and I was not sure about the result of the second one, I chose the first dataset.</p>
+<h2 id="the-work">The Work</h2>
+<h3 id="data">Data</h3>
+<p>In the dataset from the <a href="http://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions">UCI</a>, there are the train test split and the raw data as well.</p>
+<p>I wanted to use the raw data, because If I do all feature engineering and data wrangling I can understand the data better and I can learn more.</p>
+<p>I used these files:</p>
+<ul>
+<li>RawData/exp_*.txt ➡ all measurement file as a txt file</li>
+<li>RawData/labels.txt ➡ informations about all measurements and activities</li>
+<li>activity_labels.txt  ➡ meaning of activity labels</li>
+</ul>
+<h3 id="notebooks">Notebooks</h3>
+<p>The biggest part of the whole project was the data preparation, It was really challenging. You can walk through on all steps in the notebooks/human-activity-recognition-data-preprocessing.ipynb</p>
+<p>After the data preprocessing I tried out some of the classifier models from the sckit learn library. I found the random forest classifier the best for this task. The initial accuracy was 97,86%. I was really suprised, because this accuracy was higher than the accuracy in some papers.  You can find the machine learning part of the project in the notebooks/human-activity-recognition-ml.ipynb. In the future I would like to fine tune this, because I believe it is possible to achive a better accuracy.</p>
+<p>After I created the appropriate data, and I trained a model to classify human activity. I wanted to see the results of the project not only in scores, but visually as well. Therefore I created another notebook with an opportunity to test the original data and to test any correctly recorded data. This is the notebooks/human-activity-recognition-classifier.ipynb.</p>
+<p>The first plot of the data is a comparsion between the real labels of the experiment (upper part), and the labels of my classifier (lower part). I plotted  one channel (acc_x) of the smartpohne&rsquo;s accelerometer, and the labels as colored areas, for better interpretation.</p>
+<p>There are two main differencies between the classified data and the original data:</p>
+<ol>
+<li><strong>The resolution of the labels in the classified plot.</strong> The answer is really easy, I used 128 sample blocks to train my model, and this is the resolution of my classifier. This means, the model can only calssify 128 sample blocks in a measurement. This corresponds to 2.56 seconds. (the sample rate of the measurements is 50Hz, 1s has 50 samples than 2.56s has 128 samples).</li>
+<li><strong>The white parts in the original data.</strong> These parts have no labels, it means, that we have no idea what acitvities they are. When I created the train dataset I dropped these part of the measurements.  If I used them I could use them as labels for no activity, but this is not totally true, because there is an activity there, but we don&rsquo;t know which activity that is. These part of the mesurement for this usecase are noise. Without of these noises we have only the 12 labels for the 12 activities. Therefore when we look at the classified data we cannot see white spaces. The model classifies all the datapoint in the measurement. Which is cool, because we can see the originally unlabeled parts of the experiment as labeled.</li>
+</ol>
+<p><img alt="exp_1" src="/posts/2020/05/human-activity-recognition/exp_1.png"></p>
+]]></content>
         </item>
         
     </channel>
