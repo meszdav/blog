@@ -3,7 +3,7 @@ author:
   name: "David Meszaros"
 date: 2020-09-01
 linktitle: RSQ
-title: Road Surface Quality
+title: Road Surface Quality using Smartphone - Project Report
 type:
 - post
 - posts
@@ -12,10 +12,6 @@ aliases:
 - /blog/road-surface-quality/
 ---
 
-
-# Road Surface Quality using Smartphone - Project Report
-
-Status: Completed
 
 # Introduction
 

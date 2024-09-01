@@ -17,11 +17,11 @@
       <description>Test python code $$ \frac{a}{b} $$ def test(x): return x </description>
     </item>
     <item>
-      <title>Road Surface Quality</title>
-      <link>//localhost:1313/posts/2020/09/road-surface-quality/</link>
+      <title>Road Surface Quality using Smartphone - Project Report</title>
+      <link>//localhost:1313/posts/2020/09/road-surface-quality-using-smartphone-project-report/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020/09/road-surface-quality/</guid>
-      <description>Road Surface Quality using Smartphone - Project Report Status: Completed&#xA;Introduction I live in Hungary, where the road surface quality is one of the worst in Europe. While I was on the road, I thought several times that it would be good to plan my trip depending on the road quality. In this case I could better enjoy the beauties of my country, and the trips would been more safe. Because of this, I decided to create a proof of concept in this topic.</description>
+      <guid>//localhost:1313/posts/2020/09/road-surface-quality-using-smartphone-project-report/</guid>
+      <description>Introduction I live in Hungary, where the road surface quality is one of the worst in Europe. While I was on the road, I thought several times that it would be good to plan my trip depending on the road quality. In this case I could better enjoy the beauties of my country, and the trips would been more safe. Because of this, I decided to create a proof of concept in this topic.</description>
     </item>
     <item>
       <title>Human Activity Recognition</title>

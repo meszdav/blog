@@ -24,16 +24,13 @@ $$ \frac{a}{b} $$<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;b
         </item>
         
         <item>
-            <title>Road Surface Quality</title>
-            <link>//localhost:1313/posts/2020/09/road-surface-quality/</link>
+            <title>Road Surface Quality using Smartphone - Project Report</title>
+            <link>//localhost:1313/posts/2020/09/road-surface-quality-using-smartphone-project-report/</link>
             <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
             
-            <guid>//localhost:1313/posts/2020/09/road-surface-quality/</guid>
-            <description>Road Surface Quality using Smartphone - Project Report Status: Completed
-Introduction I live in Hungary, where the road surface quality is one of the worst in Europe. While I was on the road, I thought several times that it would be good to plan my trip depending on the road quality. In this case I could better enjoy the beauties of my country, and the trips would been more safe. Because of this, I decided to create a proof of concept in this topic.</description>
-            <content type="html"><![CDATA[<h1 id="road-surface-quality-using-smartphone---project-report">Road Surface Quality using Smartphone - Project Report</h1>
-<p>Status: Completed</p>
-<h1 id="introduction">Introduction</h1>
+            <guid>//localhost:1313/posts/2020/09/road-surface-quality-using-smartphone-project-report/</guid>
+            <description>Introduction I live in Hungary, where the road surface quality is one of the worst in Europe. While I was on the road, I thought several times that it would be good to plan my trip depending on the road quality. In this case I could better enjoy the beauties of my country, and the trips would been more safe. Because of this, I decided to create a proof of concept in this topic.</description>
+            <content type="html"><![CDATA[<h1 id="introduction">Introduction</h1>
 <p>I live in Hungary, where the road surface quality is one of the worst in Europe. While I was on the road, I thought several times that it would be good to plan my trip depending on the road quality. In this case I could better enjoy the beauties of my country, and the trips would been more safe. Because of this, I decided to create a proof of concept in this topic.</p>
 <p>The goal of the proof of concept is to evaluate specific road surface measurements, and plot the road surface quality to a geographical map, only using the measurement data.</p>
 <p>The measurements have been recorded via a smart phone, and  only the accelerometer, gyroscope and gps data have been used, to classify the road surface into a quality class.</p>
@@ -53,14 +50,14 @@ Introduction I live in Hungary, where the road surface quality is one of the wor
 <p>My plan was to select 3 types of roads, which I can use as training data. After thinking about a bit, I realized that to classify road surface quality into three classes I would need much more data and experimenting.  So I discarded the idea, and I decided to classify the road surfaces into two categories; good and bad.</p>
 <p>This is a very subjective way to select labeled data, but as a proof of concept it worked perfectly.</p>
 <p>For <strong>quality 1</strong> I selected the following route in Hungary where I live:</p>
-<p><img alt="Figure 1: Best quality road surface" src="/posts/2020/09/road-surface-quality/quality_0.png"></p>
+<p><img alt="Figure 1: Best quality road surface" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/quality_0.png"></p>
 <p>Figure 1: Best quality road surface</p>
 <p>For the <strong>quality 2</strong> road surface I selected roads with significant dameges.</p>
-<p><img alt="Figure 3: Bad quality road surface." src="/posts/2020/09/road-surface-quality/newplot_(7).png"></p>
+<p><img alt="Figure 3: Bad quality road surface." src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/newplot_(7).png"></p>
 <p>Figure 3: Bad quality road surface.</p>
 <p>These routes will be the dataset in order to train, validate and test the machine learning models.</p>
 <p>For testing purposes I selected another route, which I can use to test the best model with data which is fully unknown for the model. This route will have good and bad road surfaces as well.</p>
-<p><img alt="Figure 4: Test route for road surface classification" src="/posts/2020/09/road-surface-quality/newplot_(8).png"></p>
+<p><img alt="Figure 4: Test route for road surface classification" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/newplot_(8).png"></p>
 <p>Figure 4: Test route for road surface classification</p>
 <p>As record instrument I used the phyphox application. This application is able to record all of the signals from the smart phone. This is perfect for my purposes. The sample rate for the accelerometer and the gyroscope is 50Hz, which is very good for this use case. But the sample rate for the GPS is only 1s. (and the sample rate not constant). The output of the measurements are comma separated csv file. In the output file there are 4 csv-s, and each csv belongs to a sensor.</p>
 <h1 id="data-exploration-and-processing">Data Exploration and Processing</h1>
@@ -109,7 +106,7 @@ z_acc            0.502430
 measurementID    0.000000
 dtype: float64
 </code></pre><p>It easy to see, that the na values in each column is really high. The smallest amount of <em>NaN</em> values have the accelerometers and the gyroscope, but the gps signals have a large amount of <em>NaN</em>  values. To see visually where are those missing values I plotted out a heatmap. (<strong>blues</strong> for values and the <strong>whites</strong> for the <em>NaNs</em>):</p>
-<p><img alt="Figure 6: Distribution of the <em>NaN</em> values in the dataframe" src="/posts/2020/09/road-surface-quality/Untitled.png"></p>
+<p><img alt="Figure 6: Distribution of the <em>NaN</em> values in the dataframe" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/Untitled.png"></p>
 <p>Figure 6: Distribution of the <em>NaN</em> values in the dataframe</p>
 <p>The explanation for this, the sample rate of the measurement. The data points have been not recorded at the same time for the different sensors as I waited. For example there were no data  recorded for the accelerometer where the data have been recorded for the gyroscope and vice versa. This means as well, that the dropping out of the <em>NaN</em>  values is not a solution for this problem. If we would do so, then we lost all data point from one or more  sensors. In order to take care of this missing values I worked out the following data processing steps:</p>
 <ol>
@@ -130,7 +127,7 @@ dtype: float64
 </li>
 </ol>
 <p>After these steps the <em>NaN</em> values have been from the accelerometers and the gyroscope eliminated. With the <em>NaNs</em> in the gps signals I will take care of in a later step.</p>
-<p><img alt="Figure 7: Distribution of the <em>NaNs</em> after the dataprocessing steps." src="/posts/2020/09/road-surface-quality/Untitled%201.png"></p>
+<p><img alt="Figure 7: Distribution of the <em>NaNs</em> after the dataprocessing steps." src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/Untitled%201.png"></p>
 <p>Figure 7: Distribution of the <em>NaNs</em> after the dataprocessing steps.</p>
 <p>These steps make possible to do feature engineering, which is the key part of the data processing.</p>
 <h1 id="feature-engineering">Feature Engineering</h1>
@@ -158,7 +155,7 @@ dtype: float64
 <p>Number of features: 126</p>
 <p>Labels distribution:</p>
 <p>There are 561 records for the  label 0 and 540 for the label 1. This means all class is representative in the dataset.</p>
-<p><img alt="Figure 8: Label Distribution" src="/posts/2020/09/road-surface-quality/newplot_(10).png"></p>
+<p><img alt="Figure 8: Label Distribution" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/newplot_(10).png"></p>
 <p>Figure 8: Label Distribution</p>
 <p>To prepare the data for machine learning I splitted the data into train, validation and test set. In the first step I splitted the 70% of the data to train set and the 20% of the data to validation set. After that I used the  splitted train set for further splitting. At the and I had following three splits:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>train:  704 records
@@ -182,12 +179,12 @@ dtype: float64
 <h2 id="metrics">Metrics</h2>
 <p>As my main metric to evaluate the model I chose the accuracy score. The accuracy score can be calculated as the sum of the true positive and true negative values divided by the total number of the samples. This score works only if the data is well balanced, this means that the number of each label should be almost the same. This is perfect for this usecase, because the number of  the label 0, and 1 is almost the same and so the accuracy score  is a representative evaluating metrics.</p>
 <p>I trained all models on the training data. And with the basic parameters I got the following results.</p>
-<p><img alt="Untitled%202.png" src="/posts/2020/09/road-surface-quality/Untitled%202.png"></p>
+<p><img alt="Untitled%202.png" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/Untitled%202.png"></p>
 <p>The best accuracy belongs to the Random Forest Classifier and to the Gradient Boosting Classifier. In the cross validation the smaller delta (max score - min score) value belongs to the Random Forest Classifier, this means the model is more robust, and performs better with unknown data. The AdaBoost classifier performs pretty good as well, but the robustness and the accuracy score sightly below of the Random Forest and Gradient Boosting classifiers. The performance of KNeighbors classifier is worse than the previous methods. The Support Vector classifier performs the worst, this model classifies all record with label 1, this means the model cannot make difference between the classes.</p>
 <p>If we examine the confusion matrix of these two classifier we can see, that the  RFC and the SVC make the same mistakes.  That is why I decided to make hyperparameter tuning for both algorithms.</p>
-<p><img alt="Figure 8: Confusion matrix of the Random Forest Classifier" src="/posts/2020/09/road-surface-quality/Untitled%203.png"></p>
+<p><img alt="Figure 8: Confusion matrix of the Random Forest Classifier" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/Untitled%203.png"></p>
 <p>Figure 8: Confusion matrix of the Random Forest Classifier</p>
-<p><img alt="Figure 9: Confusion Matrix of the Gradient Boost Classifier" src="/posts/2020/09/road-surface-quality/Untitled%204.png"></p>
+<p><img alt="Figure 9: Confusion Matrix of the Gradient Boost Classifier" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/Untitled%204.png"></p>
 <p>Figure 9: Confusion Matrix of the Gradient Boost Classifier</p>
 <h1 id="hyperparameter-tuning">Hyperparameter Tuning</h1>
 <p>For the hyperparameter tuning of the rfc I selected the following  paramters:</p>
@@ -220,18 +217,18 @@ dtype: float64
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>gbc_search<span style="color:#f92672">.</span>fit(X_train, y_train)
 </span></span></code></pre></div><p>After the hyperparameter tuning the summary:</p>
-<p><img alt="Untitled%205.png" src="/posts/2020/09/road-surface-quality/Untitled%205.png"></p>
+<p><img alt="Untitled%205.png" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/Untitled%205.png"></p>
 <p>After the hyperparameter tuning the accuracy score was not better. Because of the training speed and the better cross validation delta score, I selected the Random Forest Classifier as my final model. The final accuracy of the Random Forest Classifier was 0.977376. The training speed was for the rfc: 1,9s and for the gbc 2,9s.</p>
 <p>To examine the accuracy visually I plotted out the training data sets, which have been classified by the trained algorithm. Normally it is not best way to represent the results, but in this case it can be a good choice because while the training the data set was shuffled. In this case I read the labels separately, this means the model saw the data in this form firstly.</p>
-<p><img alt="Figure 10: Training data for good quality road surface" src="/posts/2020/09/road-surface-quality/newplot_(11).png"></p>
+<p><img alt="Figure 10: Training data for good quality road surface" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/newplot_(11).png"></p>
 <p>Figure 10: Training data for good quality road surface</p>
-<p><img alt="Figure 11: Training data for bad quality road surface" src="/posts/2020/09/road-surface-quality/newplot_(12).png"></p>
+<p><img alt="Figure 11: Training data for bad quality road surface" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/newplot_(12).png"></p>
 <p>Figure 11: Training data for bad quality road surface</p>
-<p><img alt="Figure 12: Unknown data classified by the Random Forest Classifier as Proof of Concept" src="/posts/2020/09/road-surface-quality/newplot_(13).png"></p>
+<p><img alt="Figure 12: Unknown data classified by the Random Forest Classifier as Proof of Concept" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/newplot_(13).png"></p>
 <p>Figure 12: Unknown data classified by the Random Forest Classifier as Proof of Concept</p>
 <h1 id="deployment">Deployment</h1>
 <p>I build a plotly dash application to interactively visualize the data classification. This application can be easily deployed with the help of Amazon Beanstalk or with Heroku. With the application it is possible to upload only a zip file which is coming from directly the phyphox application. After the upload we need to wait just a few seconds and the classification is happening. Every  recorded gps coordinate will be classified to a road surface quality class.</p>
-<p><img alt="Figure 13: Screenshot from the dash application" src="/posts/2020/09/road-surface-quality/Untitled%206.png"></p>
+<p><img alt="Figure 13: Screenshot from the dash application" src="/posts/2020/09/road-surface-quality-using-smartphone-project-report/Untitled%206.png"></p>
 <p>Figure 13: Screenshot from the dash application</p>
 <h1 id="conclusion">Conclusion</h1>
 <p>I created this project as a proof of concept. The results exceeded my expectations. However I used only smartphone data the classification accuracy was above 97%. There are manny part of the project where it can be optimized. With the collection of more training data from more type of road surfaces, the method can be more better and more versatile.  There are many oportunities to develop the theory, with more data it could be build a database and the road surface data could be monitored not only in one city, but even in a whole country&hellip;</p>
