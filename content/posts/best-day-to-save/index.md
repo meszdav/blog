@@ -41,7 +41,7 @@ My strategy was to check if the selected day is available, if not I am using the
  # Rules and assumptions:
  - The investment day is defined with a number between 1 and 31, which represents the day of the month.
  - If the selected day is not available in the given month, the next available day is used.
- - In case the day is greater than the last avaulable day in the month the last available day is used, **not** the first day of the next month.
+ - In case the day is greater than the last available day in the month the last available day is used, **not** the first day of the next month.
  - The investment is always 10$.
  - The investment is always made at the close price of the day.
 
@@ -53,7 +53,7 @@ The first simulation I ran was to check the effect of the investment day for the
 
 <a id="figure1"></a>
 
-![1. figure](plots/saving_plan_max_period.png)
+![1. figure](assets/saving_plan_max_period.png)
 
 
 The results from the first simulation does not really meets my expectation. As you can see in the [figure](#figure1) the difference between the minimum possible and maximum possible worth is about **5500$** which means you would have **8.36%%** more total worth if you would have invested on the first day of the  month, compared to the last day of the month. This is quite a significant difference, which seems to be matching my personal perception. However in this case Day 1 was not the most expensive day to buy, but not the cheapest either.
@@ -64,20 +64,20 @@ Table for 5 scenarios:
 
 | Scenario | Start Date | End Date  | Best day | Worst day | Difference | Data                                          |
 | -------- | ---------- | --------- | -------- | --------- | ---------- | --------------------------------------------- |
-| 1        | Jan, 1972  | Aug, 2024 | 30       | 5         | 9.1%       | ![2. figure](plots/saving_plan_period_1.png) |
-| 2        | May, 1980  | May 1985  | 19       | 4         | 5.7%       | ![3. figure](plots/saving_plan_period_2.png) |
-| 3        | Mar, 1990  | Mar, 2005 | 8        | 29        | 4.6%       | ![4. figure](plots/saving_plan_period_3.png) |
-| 4        | Okt, 2000  | Okt, 2015 | 28       | 31        | 8.9%       | ![5. figure](plots/saving_plan_period_4.png) |
-| 5        | Jan, 2010  | Aug, 2024 | 23       | 3         | 9.1%       | ![6. figure](plots/saving_plan_period_5.png) |
+| 1        | Jan, 1972  | Aug, 2024 | 30       | 5         | 9.1%       | ![2. figure](assets/saving_plan_period_1.png) |
+| 2        | May, 1980  | May 1985  | 19       | 4         | 5.7%       | ![3. figure](assets/saving_plan_period_2.png) |
+| 3        | Mar, 1990  | Mar, 2005 | 8        | 29        | 4.6%       | ![4. figure](assets/saving_plan_period_3.png) |
+| 4        | Okt, 2000  | Okt, 2015 | 28       | 31        | 8.9%       | ![5. figure](assets/saving_plan_period_4.png) |
+| 5        | Jan, 2010  | Aug, 2024 | 23       | 3         | 9.1%       | ![6. figure](assets/saving_plan_period_5.png) |
 
-These results are very surprising for me, because the results are quite different. The best and worst day was in all cases different, and the order of the days seems to be random too. The difference between the best and worst day is between **4.6%** and **9.1%**. However the number of simlulated periods is not enough to make a general statement.
-The most suprising result for me was the the last scenario is basically the same as the first one. Obviously the total worths are different, but the shape of the graph, and the ratio between all the days are basically the same. 
+These results are very surprising for me, because the results are quite different. The best and worst day was in all cases different, and the order of the days seems to be random too. The difference between the best and worst day is between **4.6%** and **9.1%**. However the number of simulated periods is not enough to make a general statement.
+The most surprising result for me was the the last scenario is basically the same as the first one. Obviously the total worths are different, but the shape of the graph, and the ratio between all the days are basically the same. 
 
 Let`s see the results for 6 different scenarios, where the start of the saving plan is always different, but the end is always the same:
 
-| ![7. figure](plots/same_end_with_1983-08-01.png)  | ![8. figure](plots/same_end_with_1989-05-01.png)  | ![9. figure](plots/same_end_with_1991-03-01.png)  |
+| ![7. figure](assets/same_end_with_1983-08-01.png)  | ![8. figure](assets/same_end_with_1989-05-01.png)  | ![9. figure](assets/same_end_with_1991-03-01.png)  |
 | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| ![10. figure](plots/same_end_with_2003-10-01.png) | ![11. figure](plots/same_end_with_2008-01-01.png) | ![12. figure](plots/same_end_with_2020-11-01.png) |
+| ![10. figure](assets/same_end_with_2003-10-01.png) | ![11. figure](assets/same_end_with_2008-01-01.png) | ![12. figure](assets/same_end_with_2020-11-01.png) |
 
 I find it quite interesting, that the shape of each scenario is almost the same. **This means, that the day of the saving plan is rather irrelevant for the outcome. The only thing which significantly affects the results is the end date of the saving plan.** 
 
@@ -87,7 +87,7 @@ To make this perception statistically more relevant I calculated the saving plan
 
 <a id="figure13"></a>
 
-![13. figure](plots/saving_plan_same_end_all.png)
+![13. figure](assets/saving_plan_same_end_all.png)
 
 The plot shows all the calculations with normalized results for each day of the month. This gives me the confidence to say that the start of the saving plan is not relevant to decide which day is the best or worst day to invest. The only thing which is significantly affecting the results is the end date. 
 
@@ -97,14 +97,14 @@ But wait a minute, what is the reason for this? Why is the end date so important
 If we plot the best and worst day for the time period between 1972 and 2024, we can see on the following plots that there is no really a difference between the different days. 
 In these simulations every saving plan have been started on the 5th day of the month (blue) and on the 30th day of the month (orange). In the individual month there are some differences, in some cases quite big differences but on the long run the differences are equalized.
 
-| ![14. figure](plots/saving_plan_day_5_vs_30.png) | ![15. figure](plots/saving_plan_day_5_vs_30_zoomed.png) |
+| ![14. figure](assets/saving_plan_day_5_vs_30.png) | ![15. figure](assets/saving_plan_day_5_vs_30_zoomed.png) |
 | ------------------------------------------------- | -------------------------------------------------------- |
 
- For this reason the start date is not as relevant as the end date. The differences are equalized on the long run. If we plot the distribution of the differences between the two days we get the following reulst:
+ For this reason the start date is not as relevant as the end date. The differences are equalized on the long run. If we plot the distribution of the differences between the two days we get the following results:
 
 <a id="figure16"></a>
 
-![16. figure](plots/saving_plan_day_5_vs_30_diff_dist.png)
+![16. figure](assets/saving_plan_day_5_vs_30_diff_dist.png)
 
 The differences are distributed almost normally around 0, this proves the assumption that the differences are equalized on the long run.
 
@@ -116,7 +116,7 @@ With using the individual days of each available month we can calculate for each
 
 <a id="figure17"></a>
 
-![17. figure](plots/monthly_diff_dist.png)
+![17. figure](assets/monthly_diff_dist.png)
 
 Most of the differences in the past 50 years are about between **3%** and **6%**.
 
@@ -132,7 +132,7 @@ The following plot shows the distribution of the ranks for each day of the month
 
 <a id="figure18"></a>
 
-![18. figure](plots/rank_distribution_all_day.png)
+![18. figure](assets/rank_distribution_all_day.png)
 
 There is a noticeable pattern in the visualization. In the first half of the month, the ranks generally align with the day of the month. For example, the 1st day ranks near the top, and the 5th day ranks around 5th. This trend holds until about the 16th-17th day, where the dominant rank fades, and the ranks become more varied.
 

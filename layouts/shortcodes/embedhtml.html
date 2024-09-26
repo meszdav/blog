@@ -1,0 +1,5 @@
+{{ $file := .Get "file" }} <!-- Get the file parameter -->
+{{ $width := .Get "width" | default "100%" }} <!-- Get the width parameter or default to 100% -->
+<div style="width: {{ $width }}; max-width: 100%; overflow: auto;">
+    {{ (printf "%s%s" .Page.File.Dir $file) | readFile | replaceRE "^---[\\s\\S]+?---" "" | safeHTML }}
+</div>

@@ -266,3 +266,5 @@ disableHugoGeneratorInject = false
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
+    # [markup.goldmark.renderer]
+    #   unsafe = true
