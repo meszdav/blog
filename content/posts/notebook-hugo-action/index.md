@@ -13,3 +13,21 @@ aliases:
 ---
 
 # This is a test to test whether the code is working or not
+
+
+```python
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+
+data = [5, 10, 15, 20, 25]
+ax.plot(data)
+plt.show()
+
+```
+
+
+    
+![png](index_files/index_2_0.png)
+    
+
