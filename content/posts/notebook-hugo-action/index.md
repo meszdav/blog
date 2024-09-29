@@ -1,7 +1,7 @@
 {
   "title": "This is a test to test whether the code is working or not",
   "author": {
-    "name": null
+    "name": "meszdav"
   },
   "date": "2024-09-29",
   "type": [
