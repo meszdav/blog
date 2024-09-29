@@ -1,5 +1,5 @@
 {
-  "title": null,
+  "title": "Hello Betti",
   "author": {
     "name": "David Meszaros"
   },
@@ -9,4 +9,6 @@
     "posts"
   ]
 }
-'test'
+# Hello Betti
+
+# Ez egy teszt most.
