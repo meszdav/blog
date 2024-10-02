@@ -24,8 +24,10 @@ For these reasons, I’ve decided to adopt the following approach:
 
 My goal is to publish my hobby projects with minimal effort. The first time I published my work, I had to create a notebook with all the code and explanations just to generate the final markdown file. Afterward, I had to copy the markdown from the project’s repository to the blog repository. This process is tedious and time-consuming.
 
+![workflow](resources/publish-workflow.drawio.png)
+
 
     
-![png](resources/output_1_0.png)
+![png](resources/output_2_0.png)
     
 
