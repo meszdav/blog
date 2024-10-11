@@ -29,14 +29,171 @@ The data which I used looks like this:
 
 
 
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
 </style>
-<small>shape: (5, 21)</small><table border="1" class="dataframe"><thead><tr><th>id</th><th>home</th><th>away</th><th>home-name</th><th>away-name</th><th>sport-id</th><th>date-start-timestamp</th><th>result</th><th>homeResult</th><th>awayResult</th><th>home-winner</th><th>away-winner</th><th>postmatchResult</th><th>country-id</th><th>country-name</th><th>1_avg_odds</th><th>x_avg_odds</th><th>2_avg_odds</th><th>1_max_odds</th><th>x_max_odds</th><th>2_max_odds</th></tr><tr><td>i64</td><td>i64</td><td>i64</td><td>str</td><td>str</td><td>i64</td><td>i64</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>i64</td><td>str</td><td>f64</td><td>f64</td><td>f64</td><td>f64</td><td>f64</td><td>f64</td></tr></thead><tbody><tr><td>3263915</td><td>8002902</td><td>8002903</td><td>&quot;Liverpool&quot;</td><td>&quot;Manchester City&quot;</td><td>1</td><td>1538926200</td><td>&quot;0:0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;draw&quot;</td><td>&quot;draw&quot;</td><td>&quot;0:0&quot;</td><td>198</td><td>&quot;England&quot;</td><td>2.75</td><td>3.6</td><td>2.6</td><td>2.75</td><td>3.6</td><td>2.6</td></tr><tr><td>3263917</td><td>8002906</td><td>8002907</td><td>&quot;Southampton&quot;</td><td>&quot;Chelsea&quot;</td><td>1</td><td>1538918100</td><td>&quot;0:3&quot;</td><td>&quot;0&quot;</td><td>&quot;3&quot;</td><td>&quot;lost&quot;</td><td>&quot;win&quot;</td><td>&quot;0:3&quot;</td><td>198</td><td>&quot;England&quot;</td><td>6.5</td><td>4.2</td><td>1.57</td><td>6.5</td><td>4.2</td><td>1.57</td></tr><tr><td>3263913</td><td>8002898</td><td>8002899</td><td>&quot;Fulham&quot;</td><td>&quot;Arsenal&quot;</td><td>1</td><td>1538910000</td><td>&quot;1:5&quot;</td><td>&quot;1&quot;</td><td>&quot;5&quot;</td><td>&quot;lost&quot;</td><td>&quot;win&quot;</td><td>&quot;1:5&quot;</td><td>198</td><td>&quot;England&quot;</td><td>5.0</td><td>4.4</td><td>1.66</td><td>5.0</td><td>4.4</td><td>1.66</td></tr><tr><td>3263916</td><td>8002904</td><td>8002905</td><td>&quot;Manchester Utd&quot;</td><td>&quot;Newcastle&quot;</td><td>1</td><td>1538843400</td><td>&quot;3:2&quot;</td><td>&quot;3&quot;</td><td>&quot;2&quot;</td><td>&quot;win&quot;</td><td>&quot;lost&quot;</td><td>&quot;3:2&quot;</td><td>198</td><td>&quot;England&quot;</td><td>1.4</td><td>4.75</td><td>10.0</td><td>1.4</td><td>4.75</td><td>10.0</td></tr><tr><td>3263911</td><td>8002894</td><td>8002895</td><td>&quot;Burnley&quot;</td><td>&quot;Huddersfield&quot;</td><td>1</td><td>1538834400</td><td>&quot;1:1&quot;</td><td>&quot;1&quot;</td><td>&quot;1&quot;</td><td>&quot;draw&quot;</td><td>&quot;draw&quot;</td><td>&quot;1:1&quot;</td><td>198</td><td>&quot;England&quot;</td><td>2.35</td><td>3.0</td><td>3.8</td><td>2.35</td><td>3.0</td><td>3.8</td></tr></tbody></table></div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>home</th>
+      <th>away</th>
+      <th>home-name</th>
+      <th>away-name</th>
+      <th>sport-id</th>
+      <th>date-start-timestamp</th>
+      <th>result</th>
+      <th>homeResult</th>
+      <th>awayResult</th>
+      <th>home-winner</th>
+      <th>away-winner</th>
+      <th>postmatchResult</th>
+      <th>country-id</th>
+      <th>country-name</th>
+      <th>1_avg_odds</th>
+      <th>x_avg_odds</th>
+      <th>2_avg_odds</th>
+      <th>1_max_odds</th>
+      <th>x_max_odds</th>
+      <th>2_max_odds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3263915</td>
+      <td>8002902</td>
+      <td>8002903</td>
+      <td>Liverpool</td>
+      <td>Manchester City</td>
+      <td>1</td>
+      <td>1538926200</td>
+      <td>0:0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>draw</td>
+      <td>draw</td>
+      <td>0:0</td>
+      <td>198</td>
+      <td>England</td>
+      <td>2.75</td>
+      <td>3.60</td>
+      <td>2.60</td>
+      <td>2.75</td>
+      <td>3.60</td>
+      <td>2.60</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3263917</td>
+      <td>8002906</td>
+      <td>8002907</td>
+      <td>Southampton</td>
+      <td>Chelsea</td>
+      <td>1</td>
+      <td>1538918100</td>
+      <td>0:3</td>
+      <td>0</td>
+      <td>3</td>
+      <td>lost</td>
+      <td>win</td>
+      <td>0:3</td>
+      <td>198</td>
+      <td>England</td>
+      <td>6.50</td>
+      <td>4.20</td>
+      <td>1.57</td>
+      <td>6.50</td>
+      <td>4.20</td>
+      <td>1.57</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3263913</td>
+      <td>8002898</td>
+      <td>8002899</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>1</td>
+      <td>1538910000</td>
+      <td>1:5</td>
+      <td>1</td>
+      <td>5</td>
+      <td>lost</td>
+      <td>win</td>
+      <td>1:5</td>
+      <td>198</td>
+      <td>England</td>
+      <td>5.00</td>
+      <td>4.40</td>
+      <td>1.66</td>
+      <td>5.00</td>
+      <td>4.40</td>
+      <td>1.66</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3263916</td>
+      <td>8002904</td>
+      <td>8002905</td>
+      <td>Manchester Utd</td>
+      <td>Newcastle</td>
+      <td>1</td>
+      <td>1538843400</td>
+      <td>3:2</td>
+      <td>3</td>
+      <td>2</td>
+      <td>win</td>
+      <td>lost</td>
+      <td>3:2</td>
+      <td>198</td>
+      <td>England</td>
+      <td>1.40</td>
+      <td>4.75</td>
+      <td>10.00</td>
+      <td>1.40</td>
+      <td>4.75</td>
+      <td>10.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3263911</td>
+      <td>8002894</td>
+      <td>8002895</td>
+      <td>Burnley</td>
+      <td>Huddersfield</td>
+      <td>1</td>
+      <td>1538834400</td>
+      <td>1:1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>draw</td>
+      <td>draw</td>
+      <td>1:1</td>
+      <td>198</td>
+      <td>England</td>
+      <td>2.35</td>
+      <td>3.00</td>
+      <td>3.80</td>
+      <td>2.35</td>
+      <td>3.00</td>
+      <td>3.80</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 
@@ -54,14 +211,147 @@ After transforming the data, the table looks like this:
 
 
 
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
 </style>
-<small>shape: (5, 17)</small><table border="1" class="dataframe"><thead><tr><th>home</th><th>away</th><th>home-name</th><th>away-name</th><th>result</th><th>homeResult</th><th>awayResult</th><th>home-winner</th><th>away-winner</th><th>1_avg_odds</th><th>x_avg_odds</th><th>2_avg_odds</th><th>date</th><th>winner</th><th>winner_num</th><th>home_result</th><th>away_result</th></tr><tr><td>i64</td><td>i64</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>f64</td><td>f64</td><td>f64</td><td>datetime[μs]</td><td>str</td><td>i64</td><td>i32</td><td>i32</td></tr></thead><tbody><tr><td>8002902</td><td>8002903</td><td>&quot;Liverpool&quot;</td><td>&quot;Manchester City&quot;</td><td>&quot;0:0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;draw&quot;</td><td>&quot;draw&quot;</td><td>2.75</td><td>3.6</td><td>2.6</td><td>2018-10-07 15:30:00</td><td>&quot;draw&quot;</td><td>0</td><td>0</td><td>0</td></tr><tr><td>8002906</td><td>8002907</td><td>&quot;Southampton&quot;</td><td>&quot;Chelsea&quot;</td><td>&quot;0:3&quot;</td><td>&quot;0&quot;</td><td>&quot;3&quot;</td><td>&quot;lost&quot;</td><td>&quot;win&quot;</td><td>6.5</td><td>4.2</td><td>1.57</td><td>2018-10-07 13:15:00</td><td>&quot;away&quot;</td><td>2</td><td>0</td><td>3</td></tr><tr><td>8002898</td><td>8002899</td><td>&quot;Fulham&quot;</td><td>&quot;Arsenal&quot;</td><td>&quot;1:5&quot;</td><td>&quot;1&quot;</td><td>&quot;5&quot;</td><td>&quot;lost&quot;</td><td>&quot;win&quot;</td><td>5.0</td><td>4.4</td><td>1.66</td><td>2018-10-07 11:00:00</td><td>&quot;away&quot;</td><td>2</td><td>1</td><td>5</td></tr><tr><td>8002904</td><td>8002905</td><td>&quot;Manchester Utd&quot;</td><td>&quot;Newcastle&quot;</td><td>&quot;3:2&quot;</td><td>&quot;3&quot;</td><td>&quot;2&quot;</td><td>&quot;win&quot;</td><td>&quot;lost&quot;</td><td>1.4</td><td>4.75</td><td>10.0</td><td>2018-10-06 16:30:00</td><td>&quot;home&quot;</td><td>1</td><td>3</td><td>2</td></tr><tr><td>8002894</td><td>8002895</td><td>&quot;Burnley&quot;</td><td>&quot;Huddersfield&quot;</td><td>&quot;1:1&quot;</td><td>&quot;1&quot;</td><td>&quot;1&quot;</td><td>&quot;draw&quot;</td><td>&quot;draw&quot;</td><td>2.35</td><td>3.0</td><td>3.8</td><td>2018-10-06 14:00:00</td><td>&quot;draw&quot;</td><td>0</td><td>1</td><td>1</td></tr></tbody></table></div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>home</th>
+      <th>away</th>
+      <th>home-name</th>
+      <th>away-name</th>
+      <th>result</th>
+      <th>homeResult</th>
+      <th>awayResult</th>
+      <th>home-winner</th>
+      <th>away-winner</th>
+      <th>1_avg_odds</th>
+      <th>x_avg_odds</th>
+      <th>2_avg_odds</th>
+      <th>date</th>
+      <th>winner</th>
+      <th>winner_num</th>
+      <th>home_result</th>
+      <th>away_result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8002902</td>
+      <td>8002903</td>
+      <td>Liverpool</td>
+      <td>Manchester City</td>
+      <td>0:0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>draw</td>
+      <td>draw</td>
+      <td>2.75</td>
+      <td>3.60</td>
+      <td>2.60</td>
+      <td>2018-10-07 15:30:00</td>
+      <td>draw</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8002906</td>
+      <td>8002907</td>
+      <td>Southampton</td>
+      <td>Chelsea</td>
+      <td>0:3</td>
+      <td>0</td>
+      <td>3</td>
+      <td>lost</td>
+      <td>win</td>
+      <td>6.50</td>
+      <td>4.20</td>
+      <td>1.57</td>
+      <td>2018-10-07 13:15:00</td>
+      <td>away</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8002898</td>
+      <td>8002899</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>1:5</td>
+      <td>1</td>
+      <td>5</td>
+      <td>lost</td>
+      <td>win</td>
+      <td>5.00</td>
+      <td>4.40</td>
+      <td>1.66</td>
+      <td>2018-10-07 11:00:00</td>
+      <td>away</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8002904</td>
+      <td>8002905</td>
+      <td>Manchester Utd</td>
+      <td>Newcastle</td>
+      <td>3:2</td>
+      <td>3</td>
+      <td>2</td>
+      <td>win</td>
+      <td>lost</td>
+      <td>1.40</td>
+      <td>4.75</td>
+      <td>10.00</td>
+      <td>2018-10-06 16:30:00</td>
+      <td>home</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8002894</td>
+      <td>8002895</td>
+      <td>Burnley</td>
+      <td>Huddersfield</td>
+      <td>1:1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>draw</td>
+      <td>draw</td>
+      <td>2.35</td>
+      <td>3.00</td>
+      <td>3.80</td>
+      <td>2018-10-06 14:00:00</td>
+      <td>draw</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 
@@ -210,14 +500,195 @@ We will get the following result:
 
 
 
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
 </style>
-<small>shape: (5, 25)</small><table border="1" class="dataframe"><thead><tr><th>home</th><th>away</th><th>home-name</th><th>away-name</th><th>result</th><th>homeResult</th><th>awayResult</th><th>home-winner</th><th>away-winner</th><th>1_avg_odds</th><th>x_avg_odds</th><th>2_avg_odds</th><th>date</th><th>winner</th><th>winner_num</th><th>home_result</th><th>away_result</th><th>underdog</th><th>favourite</th><th>bet</th><th>bet_won</th><th>odds_to_use</th><th>has_favourite_won</th><th>has_underdog_won</th><th>return_on_bet</th></tr><tr><td>i64</td><td>i64</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>f64</td><td>f64</td><td>f64</td><td>datetime[μs]</td><td>str</td><td>i64</td><td>i32</td><td>i32</td><td>i32</td><td>i32</td><td>i32</td><td>bool</td><td>f64</td><td>bool</td><td>bool</td><td>f64</td></tr></thead><tbody><tr><td>8002902</td><td>8002903</td><td>&quot;Liverpool&quot;</td><td>&quot;Manchester City&quot;</td><td>&quot;0:0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;draw&quot;</td><td>&quot;draw&quot;</td><td>2.75</td><td>3.6</td><td>2.6</td><td>2018-10-07 15:30:00</td><td>&quot;draw&quot;</td><td>0</td><td>0</td><td>0</td><td>1</td><td>2</td><td>1</td><td>false</td><td>3.6</td><td>false</td><td>false</td><td>-1.0</td></tr><tr><td>8002906</td><td>8002907</td><td>&quot;Southampton&quot;</td><td>&quot;Chelsea&quot;</td><td>&quot;0:3&quot;</td><td>&quot;0&quot;</td><td>&quot;3&quot;</td><td>&quot;lost&quot;</td><td>&quot;win&quot;</td><td>6.5</td><td>4.2</td><td>1.57</td><td>2018-10-07 13:15:00</td><td>&quot;away&quot;</td><td>2</td><td>0</td><td>3</td><td>1</td><td>2</td><td>1</td><td>false</td><td>1.57</td><td>true</td><td>false</td><td>-1.0</td></tr><tr><td>8002898</td><td>8002899</td><td>&quot;Fulham&quot;</td><td>&quot;Arsenal&quot;</td><td>&quot;1:5&quot;</td><td>&quot;1&quot;</td><td>&quot;5&quot;</td><td>&quot;lost&quot;</td><td>&quot;win&quot;</td><td>5.0</td><td>4.4</td><td>1.66</td><td>2018-10-07 11:00:00</td><td>&quot;away&quot;</td><td>2</td><td>1</td><td>5</td><td>1</td><td>2</td><td>1</td><td>false</td><td>1.66</td><td>true</td><td>false</td><td>-1.0</td></tr><tr><td>8002904</td><td>8002905</td><td>&quot;Manchester Utd&quot;</td><td>&quot;Newcastle&quot;</td><td>&quot;3:2&quot;</td><td>&quot;3&quot;</td><td>&quot;2&quot;</td><td>&quot;win&quot;</td><td>&quot;lost&quot;</td><td>1.4</td><td>4.75</td><td>10.0</td><td>2018-10-06 16:30:00</td><td>&quot;home&quot;</td><td>1</td><td>3</td><td>2</td><td>2</td><td>1</td><td>1</td><td>true</td><td>1.4</td><td>true</td><td>false</td><td>0.4</td></tr><tr><td>8002894</td><td>8002895</td><td>&quot;Burnley&quot;</td><td>&quot;Huddersfield&quot;</td><td>&quot;1:1&quot;</td><td>&quot;1&quot;</td><td>&quot;1&quot;</td><td>&quot;draw&quot;</td><td>&quot;draw&quot;</td><td>2.35</td><td>3.0</td><td>3.8</td><td>2018-10-06 14:00:00</td><td>&quot;draw&quot;</td><td>0</td><td>1</td><td>1</td><td>2</td><td>1</td><td>1</td><td>false</td><td>3.0</td><td>false</td><td>false</td><td>-1.0</td></tr></tbody></table></div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>home</th>
+      <th>away</th>
+      <th>home-name</th>
+      <th>away-name</th>
+      <th>result</th>
+      <th>homeResult</th>
+      <th>awayResult</th>
+      <th>home-winner</th>
+      <th>away-winner</th>
+      <th>1_avg_odds</th>
+      <th>x_avg_odds</th>
+      <th>2_avg_odds</th>
+      <th>date</th>
+      <th>winner</th>
+      <th>winner_num</th>
+      <th>home_result</th>
+      <th>away_result</th>
+      <th>underdog</th>
+      <th>favourite</th>
+      <th>bet</th>
+      <th>bet_won</th>
+      <th>odds_to_use</th>
+      <th>has_favourite_won</th>
+      <th>has_underdog_won</th>
+      <th>return_on_bet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8002902</td>
+      <td>8002903</td>
+      <td>Liverpool</td>
+      <td>Manchester City</td>
+      <td>0:0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>draw</td>
+      <td>draw</td>
+      <td>2.75</td>
+      <td>3.60</td>
+      <td>2.60</td>
+      <td>2018-10-07 15:30:00</td>
+      <td>draw</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>3.60</td>
+      <td>False</td>
+      <td>False</td>
+      <td>-1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8002906</td>
+      <td>8002907</td>
+      <td>Southampton</td>
+      <td>Chelsea</td>
+      <td>0:3</td>
+      <td>0</td>
+      <td>3</td>
+      <td>lost</td>
+      <td>win</td>
+      <td>6.50</td>
+      <td>4.20</td>
+      <td>1.57</td>
+      <td>2018-10-07 13:15:00</td>
+      <td>away</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>1.57</td>
+      <td>True</td>
+      <td>False</td>
+      <td>-1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8002898</td>
+      <td>8002899</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>1:5</td>
+      <td>1</td>
+      <td>5</td>
+      <td>lost</td>
+      <td>win</td>
+      <td>5.00</td>
+      <td>4.40</td>
+      <td>1.66</td>
+      <td>2018-10-07 11:00:00</td>
+      <td>away</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>1.66</td>
+      <td>True</td>
+      <td>False</td>
+      <td>-1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8002904</td>
+      <td>8002905</td>
+      <td>Manchester Utd</td>
+      <td>Newcastle</td>
+      <td>3:2</td>
+      <td>3</td>
+      <td>2</td>
+      <td>win</td>
+      <td>lost</td>
+      <td>1.40</td>
+      <td>4.75</td>
+      <td>10.00</td>
+      <td>2018-10-06 16:30:00</td>
+      <td>home</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>True</td>
+      <td>1.40</td>
+      <td>True</td>
+      <td>False</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8002894</td>
+      <td>8002895</td>
+      <td>Burnley</td>
+      <td>Huddersfield</td>
+      <td>1:1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>draw</td>
+      <td>draw</td>
+      <td>2.35</td>
+      <td>3.00</td>
+      <td>3.80</td>
+      <td>2018-10-06 14:00:00</td>
+      <td>draw</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>3.00</td>
+      <td>False</td>
+      <td>False</td>
+      <td>-1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 
