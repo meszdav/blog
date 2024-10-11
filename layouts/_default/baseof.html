@@ -26,6 +26,3 @@
         {{ partial "javascript.html" . }}
     </body>
 </html>
-
-{{ $wrappedTable := printf "<div class=table-wrapper> ${1} </div>" }}
-{{ .Content | replaceRE "(<table>(?:.|\n)+?</table>)" $wrappedTable | safeHTML }}
