@@ -1,5 +1,5 @@
 {
-  "title": "Winnining by betting always on the favourite?\n\n> Disclaimer: I am not a betting expert. Please do not take this as financial advice. Do your own research before making any bets.\n\n\nI did this analysis just for fun. I am not sure if it has any practical value, however I was just curious to see if betting always on the favourite would be a good strategy.\nMy intuitive answer would be to the question, that it cannot be a good strategy, because the odds are always lower for the favourite, and the favourite does not win every time. \n\n# Betting data\n\nTo answer the question, I collected the data for 3 different leagues:\n- English Premier League\n- Spanish La Liga\n- German Bundesliga\n\nThe data is containing all the matches from the season **2018/2019** to **2023/2024**.",
+  "title": "Winnining by betting always on the favourite?",
   "author": {
     "name": "David Meszaros"
   },
@@ -9,6 +9,21 @@
     "posts"
   ]
 }
+> Disclaimer: I am not a betting expert. Please do not take this as financial advice. Do your own research before making any bets.
+
+
+I did this analysis just for fun. I am not sure if it has any practical value, however I was just curious to see if betting always on the favourite would be a good strategy.
+My intuitive answer would be to the question, that it cannot be a good strategy, because the odds are always lower for the favourite, and the favourite does not win every time. 
+
+# Betting data
+
+To answer the question, I collected the data for 3 different leagues:
+- English Premier League
+- Spanish La Liga
+- German Bundesliga
+
+The data is containing all the matches from the season **2018/2019** to **2023/2024**.
+
 The data which I used looks like this:
 
 
@@ -213,7 +228,7 @@ Furthermore we can just plot the cumulative sum of the return see how the strate
 
 
     
-![svg](resources/output_11_0.svg)
+![svg](resources/output_12_0.svg)
     
 
 
@@ -265,7 +280,7 @@ If we plot the results we can see the distribution of the returns:
 
 
     
-![svg](resources/output_17_0.svg)
+![svg](resources/output_18_0.svg)
     
 
 
