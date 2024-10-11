@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f7d7bc67-2215-4e62-9f77-40e0925971ea/deploy-status)](https://app.netlify.com/sites/sage-cobbler-e013f6/deploys)
