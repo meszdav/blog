@@ -1,4 +1,4 @@
-baseURL = "https://davidmeszaros.blog"
+baseURL = ""
 title   = "David`s Blog"
 languageCode = "en-us"
 theme = "hello-friend-ng"
@@ -42,7 +42,6 @@ disableHugoGeneratorInject = false
 [taxonomies]
   tag      = "tags"
   category = "categories"
-  series   = "series"
 
 [params]
 
@@ -267,3 +266,5 @@ disableHugoGeneratorInject = false
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
+    [markup.goldmark.renderer]
+      unsafe = true
