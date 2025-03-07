@@ -1,5 +1,5 @@
 {
-  "title": "Test connections\n\nHello ",
+  "title": "\u00a0\ud83d\udcb6 what is left ",
   "author": {
     "name": "David Meszaros"
   },
@@ -9,3 +9,4 @@
     "posts"
   ]
 }
+![resources/image.png](resources/image.png)
