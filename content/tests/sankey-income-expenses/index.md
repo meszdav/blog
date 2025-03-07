@@ -1,5 +1,5 @@
 {
-  "title": "\u00a0\ud83d\udcb6 what is left ",
+  "title": "\u00a0\ud83d\udcb6 Follow the Money: A Snaky Dashboard Unraveling Your Cash Flow!",
   "author": {
     "name": "David Meszaros"
   },
@@ -9,4 +9,6 @@
     "posts"
   ]
 }
+![hello](assets/resources/test.gif)
+
 ![resources/image.png](resources/image.png)
