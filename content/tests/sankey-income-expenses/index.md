@@ -9,6 +9,6 @@
     "posts"
   ]
 }
-![hello](assets/resources/test.gif)
+![hello](resources/test.gif)
 
 ![resources/image.png](resources/image.png)
