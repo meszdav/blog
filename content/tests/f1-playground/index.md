@@ -21,11 +21,25 @@ You can might ask the question, how is this better than just using some conventi
 
 ## Telemetry data
 
-The first thing was to get telemetry data. For this I used the fastf1 python library, which makes it simple to download telemetry data. First thing is to load a session, where only the year, event name and the session type need to be specified.
+The first thing was to get telemetry data. For this I used the fastf1 python library, which makes it simple to download telemetry data. First thing is to load a session, where only the year, event name and the session type need to be specified. 
+
+```python
+
+session = fastf1.get_session(2022, "Monaco Grand Prix", "Qualifying")
+session.load()
+```
 
 After loading the session we can use all available data like lap times, results, telemetry data, etc.
 
 The session object than can be used to retrieve telemetry data for specific drivers and laps.
+
+```python
+
+fastest_lap = session.laps.pick_drivers("VER").pick_fastest()
+# add distance to the data
+telemetry_data = fastest_lap.get_car_data().add_distance()
+telemetry_data.head(2)
+```
 
 
 
@@ -103,11 +117,25 @@ This gives a pandas dataframe whith all the required information to plot the tel
 Another not that crucial but for me important detail was to be able to plot the data with the colors of the corresponding team color of the given driver. 
 This information can be found with the fastf1 library too.
 
+```python
+
+driver = session.get_driver("VER")
+team = driver["TeamName"]
+color = fastf1.plotting.get_team_color(team, session=session)
+```
+
 
 <div style="width: 50px; height: 50px; background-color: #0600ef;"></div>
 
 
 Another detail is that the color in case of comparing a driver with another driver from the same team. In this case one of the drivers color will be inverted. This can be achived by the following code:
+
+```python
+def _invert_hex_color(hex_color: str) -> str:
+    hex_color = hex_color.lstrip("#")
+    inverted = "".join(f"{255 - int(hex_color[i:i+2], 16):02X}" for i in (0, 2, 4))
+    return f"#{inverted}"
+```
 
 
 
