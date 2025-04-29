@@ -33,3 +33,5 @@ After loading the session we can use all available data like lap times, results,
 ## Visualization
 
 The first thing was to develop some functions to visualize the
+
+![demo](assets/resources/screen_recording_0.gif)
