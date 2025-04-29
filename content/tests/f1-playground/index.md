@@ -119,6 +119,16 @@ Another detail is that the color in case of comparing a driver with another driv
 
 
 
+Putting everything together the telemetry will be plotted like this:
+
+
+    
+![svg](resources/output_14_0.svg)
+    
+
+
+The full code can be found the the github [repository](https://github.com/meszdav/f1-playground)
+
 ## Visualization
 
 The first thing was to develop some functions to visualize the
