@@ -164,7 +164,7 @@ We now have a function that returns telemetry data for two drivers from a specif
 - event: the name of the grand prix like "Monaco Grand Prix"
 - year: the year of the event e.g.: 2022
 - session: the session type like "Qualifying", "Race" etc.
-- 
+
 This means we need to extract exactly this information from the user’s prompt. To do this, I used a prompt template that defines rules for interpreting the user input:
 
 
