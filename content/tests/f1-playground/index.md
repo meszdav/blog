@@ -222,7 +222,7 @@ Combining everything together, I built a very simple streamlit app where the use
 
 1. Asking for implicit information position:
 
-![implicit_position](resources/notebooks/assets/screen_recording_0.gif)
+![implicit_position](assets/screen_recording_0.gif)
 
 2. Asking for explicit information:
 
