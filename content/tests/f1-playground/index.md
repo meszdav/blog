@@ -234,4 +234,4 @@ Combining everything together, I built a very simple streamlit app where the use
 
 ## Summary
 
-I built a very simple streamlit app where the user can enter a prompt for getting telemetry data from two F1 drivers. I learned a dozen of things, such as how to use LangChain with OpenAI, how to build custom tools, the basic concepts how to build LLM based applications
+I built a very simple streamlit app where the user can enter a prompt for getting telemetry data from two F1 drivers. I learned a dozen of things, such as how to use LangChain with OpenAI, how to build custom tools, the basic concepts how to build LLM based applicationsa
