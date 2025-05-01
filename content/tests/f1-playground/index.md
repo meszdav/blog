@@ -222,15 +222,15 @@ Combining everything together, I built a very simple streamlit app where the use
 
 1. Asking for implicit information position:
 
-![implicit_position](resources/resources/screen_recording_0.gif)
+![implicit_position](resources/screen_recording_0.gif)
 
-2. Asking for explicit information:
+1. Asking for explicit information:
 
-![most_recent_event](resources/resources/screen_recording_1.gif)
+![most_recent_event](resources/screen_recording_1.gif)
 
 3. Asking for most recent event:
    
-![explicit_information](resources/resources/screen_recording_2.gif)
+![explicit_information](resources/screen_recording_2.gif)
 
 ## Summary
 
